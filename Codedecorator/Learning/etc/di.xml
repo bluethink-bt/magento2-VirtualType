@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <!-- Changing value for both Controllers  -->
+<!--    <type name="Codedecorator\Learning\Model\ClassDefault">
+        <arguments>
+                <argument name="namespace" xsi:type="string">test-Pramod</argument>
+        </arguments>
+    </type>  -->
+
+
+<virtualType name="ClassDefaultVirtual" type="Codedecorator\Learning\Model\ClassDefault">
+        <arguments>
+            <argument name="namespace" xsi:type="string">Amrendra</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Codedecorator\Learning\Controller\Index\Index">
+        <arguments>
+            <argument name="classDefault" xsi:type="object">ClassDefaultVirtual</argument>
+        </arguments>
+    </type>
+
+
+<virtualType name="ClassDefaultVirtualNew" type="Codedecorator\Learning\Model\ClassDefault">
+        <arguments>
+            <argument name="namespace" xsi:type="string">test-Submit</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Codedecorator\Learning\Controller\Index\Submit">
+        <arguments>
+            <argument name="classDefault" xsi:type="object">ClassDefaultVirtualNew</argument>
+        </arguments>
+    </type>
+
+   
+
+</config>
